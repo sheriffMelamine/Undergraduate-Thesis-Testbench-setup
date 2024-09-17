@@ -13,7 +13,7 @@ This project contains the necessary guidelines for hardware and software setup f
 *  Follow along [this tutorial]( https://iotcircuithub.com/esp8266-programming-arduino/) for setting up Arduino IDE for ESP01 (Hack: You can actually just short-circuit the RESET pin with GND instead of using a RESET Button)
 *  Watch [this video](https://youtu.be/IDMMzxDV4PQ?si=-UPuiMfHLJFbvFbT) for setting up Windows Firewall so that MQTT can work
 *  Copy the files in the [mosquitto]( https://github.com/sheriffMelamine/Undergraduate-Thesis-Testbench-setup/tree/main/mosquitto) directory and paste them in the mosquitto folder in Program-Files of your computer
-
+*  Setup the router for address reservation (as the codes are developed based on the premise that the IP Adress of the MQTT server is fixed). Go to ```192.168.0.1``` (with the local password as ```testbench41```) and then move to Advanced Settings. There go to the Network tab and modify address reservation so that your Laptop (MQTT Server) is selected to reserve the address ```192.168.0.100```.
 ##  How To Use the Files
 ### Setting up Sensors
 
@@ -36,7 +36,7 @@ MQTT Password: ```12341234```
 
 SSID: ```drone-testbench-thesis```  
 Password: ```tbthesis```
-*  Firstly, open command prompt and run the mosquitto server by running the command ```mosquitto```.
+*  Firstly, open command prompt, go to the mosquitto directory and run the mosquitto server by running the command ```mosquitto```.
 *  Power the testbench and the router. Check in MQTT Explorer if the topics are visible to your computer.
 *  Then set the drone to its initial orientation of zero roll,pitch and yaw and run the [Encoder_data.m](https://github.com/sheriffMelamine/Undergraduate-Thesis-Testbench-setup/blob/main/wireless_setup/MATLAB%20Scripts/Encoder_data.m) script.
 *  While the script is running, the encoder data will be automatically recorded. You can modify the value of the variable n to change the size of data you want to store before running it. The movement of the attached drone should take place during this period which is to be recorded.
